@@ -113,6 +113,20 @@ class PVD:
                     px1_new = px1 + ceil(diff / 2)
                     px2_new = px2 - floor(diff / 2)
                 
+                # My own modification to prevent boundry issue
+                if px1_new < 0:
+                    px2_new -= px1_new
+                    px1_new = 0
+                elif px2_new < 0:
+                    px1_new -= px2_new
+                    px2_new = 0
+                if px1_new > 255:
+                    px2_new -= px1_new - 255
+                    px1_new = 255
+                elif px2_new > 255:
+                    px1_new -= px2_new - 255
+                    px2_new = 255
+
                 result.append(px1_new)
                 result.append(px2_new)
             self.stego_result.append(result)

@@ -1,3 +1,5 @@
 /project/result*/
 /project/secret*/
 /project/experiment*
+/project/tmp*
+/project/debug*
