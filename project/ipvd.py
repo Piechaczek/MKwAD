@@ -223,7 +223,7 @@ class IPVD:
 
                 # Boundry issues (BOP)
                 if px0_new > 255:
-                    px3_new += px0_new - 255
+                    px3_new -= px0_new - 255
                     px0_new = 255
                 if px3_new > 255:
                     px0_new -= px3_new - 255
